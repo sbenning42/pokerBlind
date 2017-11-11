@@ -1,0 +1,54 @@
+<mat-card>
+    <mat-card-title>Turn {{ currentTurn?.turn + 1 }}</mat-card-title>
+    <mat-card-subtitle>{{ currentTurn?.blind.little }} - {{ currentTurn?.blind.big }} € <span *ngIf="blindDurationIsFinite">for {{ currentTurn?.blind.duration }} turns</span></mat-card-subtitle>
+</mat-card>
+
+<mat-card *ngIf="blindDurationIsFinite">
+    <mat-card-title>Next Blind in {{ currentTurn?.nextBlindIn }} turns</mat-card-title>
+    <mat-card-subtitle>{{ currentTurn?.nextBlind.little }} - {{ currentTurn?.nextBlind.big }} € <span *ngIf="nextBlindDurationIsFinite">for {{ currentTurn?.nextBlind.duration }} turns</span></mat-card-subtitle>
+</mat-card>
+
+<mat-card>
+    <mat-card-title>Dealer: {{ currentTurn?.dealer.name }}</mat-card-title>
+</mat-card>
+<mat-card>
+    <mat-card-title>Little blind: {{ currentTurn?.littleBlind.name }}, {{ currentTurn?.blind.little }} €</mat-card-title>
+</mat-card>
+<mat-card>
+    <mat-card-title>Big Blind: {{ currentTurn?.bigBlind.name }}, {{ currentTurn?.blind.big }} €</mat-card-title>
+</mat-card>
+
+<mat-list>
+
+    <h3 mat-subheader>Roles</h3>
+    <mat-list-item>
+        <mat-icon mat-list-icon>account_circle</mat-icon>
+        <h4 mat-line>Dealer</h4>
+        <p mat-line> {{ currentTurn?.dealer.name }} </p>
+    </mat-list-item>
+    <mat-list-item>
+        <mat-icon mat-list-icon>star_half</mat-icon>
+        <h4 mat-line>Little Blind</h4>
+        <p mat-line> {{ currentTurn?.littleBlind.name }}, {{ currentTurn?.blind.little }} € </p>
+    </mat-list-item>
+    <mat-list-item>
+        <mat-icon mat-list-icon>star</mat-icon>
+        <h4 mat-line>Big Blind</h4>
+        <p mat-line> {{ currentTurn?.bigBlind.name }}, {{ currentTurn?.blind.big }} € </p>
+    </mat-list-item>
+
+    <mat-divider></mat-divider>
+
+    <h3 mat-subheader>Game</h3>
+    <mat-list-item>
+        <mat-icon mat-list-icon>stars</mat-icon>
+        <h4 mat-line>Turn {{ currentTurn?.turn + 1 }}</h4>
+        <p mat-line> {{ currentTurn?.blind.little }} - {{ currentTurn?.blind.big }} € <span *ngIf="blindDurationIsFinite">for {{ currentTurn?.blind.duration }} turns</span> </p>
+    </mat-list-item>
+    <mat-list-item disabled="blindDurationIsFinite">
+        <mat-icon mat-list-icon>forward</mat-icon>
+        <h4 mat-line>Next Blind in {{ currentTurn?.nextBlindIn }} turns</h4>
+        <p mat-line> {{ currentTurn?.nextBlind.little }} - {{ currentTurn?.nextBlind.big }} € <span *ngIf="nextBlindDurationIsFinite">for {{ currentTurn?.nextBlind.duration }} turns</span> </p>
+    </mat-list-item>
+
+</mat-list>

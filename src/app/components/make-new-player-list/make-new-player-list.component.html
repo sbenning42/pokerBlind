@@ -1,0 +1,21 @@
+<!--div>
+    <mat-list>
+        <mat-list-item *ngFor="let player of players">{{ player.name }}</mat-list-item>
+    </mat-list>
+    <button mat-raised-button color="primary" (click)="savePlayer(player, index)">SAVE PLAYER</button>
+</div-->
+
+<div class="list">
+    <div *ngFor="let player of players; let index = index" class="block">
+        <mat-form-field>
+            <input matInput color="primary" placeholder="Player Name" [(ngModel)]="player.name">
+        </mat-form-field>
+        <button mat-icon-button color="primary" (click)="savePlayer(player, index)"><mat-icon>save</mat-icon></button>
+    </div>
+</div>
+<div class="block">
+    <mat-form-field>
+        <input matInput color="primary" placeholder="Player Name" [(ngModel)]="name">
+    </mat-form-field>
+    <button mat-icon-button color="primary" (click)="addPlayer()"><mat-icon>add</mat-icon></button>
+</div>

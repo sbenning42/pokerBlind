@@ -1,0 +1,17 @@
+.view {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.view>* {
+    width: 100%;
+    flex: 1;
+    margin: 1em;
+}
+
+button {
+    flex: 0 1 auto !important;
+}

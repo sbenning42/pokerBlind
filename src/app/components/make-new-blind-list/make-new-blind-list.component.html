@@ -1,0 +1,26 @@
+<!--div>
+    <mat-list>
+        <mat-list-item *ngFor="let blind of blinds">{{ blind.little }} - {{ blind.big }}: {{ blind.duration }}</mat-list-item>
+    </mat-list>
+</div-->
+<div class="list">
+    <div class="block" *ngFor="let blind of blinds; let index = index">
+        <mat-form-field>
+            <input matInput color="primary" placeholder="Bet" [(ngModel)]="blind.bet">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput color="primary" placeholder="Duration" [(ngModel)]="blind.duration">
+        </mat-form-field>
+        <button mat-icon-button color="primary" (click)="saveBlind(blind, index)"><mat-icon>save</mat-icon></button>
+        <button mat-icon-button color="warn" (click)="deleteBlind(blind, index)"><mat-icon>delete</mat-icon></button>
+    </div>
+</div>
+<div class="block">
+    <mat-form-field>
+        <input matInput color="primary" placeholder="Bet" [(ngModel)]="bet">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput color="primary" placeholder="Duration" [(ngModel)]="duration">
+    </mat-form-field>
+    <button mat-icon-button color="primary" (click)="addBlind()"><mat-icon>add</mat-icon></button>
+</div>

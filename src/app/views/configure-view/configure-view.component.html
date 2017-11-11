@@ -1,0 +1,6 @@
+<div class="view">
+    <app-make-new-player-list></app-make-new-player-list>
+    <app-make-new-blind-list></app-make-new-blind-list>
+    <button mat-raised-button color="accent" (click)="navigateToPlayView()">PLAY</button>
+</div>
+<app-back-to-welcome (backToWelcomeEvent)="navigateToWelcomeView()"></app-back-to-welcome>
